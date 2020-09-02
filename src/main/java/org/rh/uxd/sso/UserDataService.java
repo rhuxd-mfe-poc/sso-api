@@ -11,35 +11,35 @@ public class UserDataService {
         return ourInstance;
     }
 
-    // For now just store contacts in memory.
-    private static List<Contact> customerList = new ArrayList<>();
+    // For now just store users in memory.
+    private static List<Contact> userList = new ArrayList<>();
 
-    public String addCustomer(Contact customer) {
+    public String addUser(Contact customer) {
         String newId =  UUID.randomUUID().toString();
         customer.setId(newId);
-        customerList.add(customer);
+        userList.add(customer);
         return newId;
     }
 
-    public String deleteCustomer(String custId) {
-        for(Contact cust : customerList) {
-            if(cust.getId().equals(custId)) {
-                customerList.remove(customerList.indexOf(cust));
-                return "removed customer: " + custId;
+    public String deleteUser(String id) {
+        for(Contact cust : userList) {
+            if(cust.getId().equals(id)) {
+                userList.remove(userList.indexOf(cust));
+                return "removed user: " + id;
             }
         }
 
-        return "customer " + custId + " does not exists";
+        return "user " + id + " does not exists";
     }
 
-    public List<Contact> getCustomerList() {
-        return customerList;
+    public List<Contact> getUserList() {
+        return userList;
     }
 
-    public Contact getCustomerById(String id) {
-        for (Contact customer : customerList) {
-            if (customer.getId().equals(id)) {
-                return customer;
+    public Contact getUserById(String id) {
+        for (Contact user : userList) {
+            if (user.getId().equals(id)) {
+                return user;
             }
         }
 

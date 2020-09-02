@@ -11,23 +11,23 @@ public class User extends Application {
     private UserDataService dataService = UserDataService.getInstance();
 
     @GET
-    public List<Contact> getCustomers() {
-        return dataService.getCustomerList();
+    public List<Contact> getUsers() {
+        return dataService.getUserList();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public String createCustomer(Contact newCustomer) {
-        return dataService.addCustomer(newCustomer);
+    public String createUser(Contact newUser) {
+        return dataService.addUser(newUser);
     }
 
     @GET
     @Path("{id}")
-    public Contact getCustomer(@PathParam("id") String id) {
-        return dataService.getCustomerById(id);
+    public Contact getUser(@PathParam("id") String id) {
+        return dataService.getUserById(id);
     }
 
     @DELETE
     @Path("{id}")
-    public String delete(@PathParam("id") String id) { return dataService.deleteCustomer(id); }
+    public String deleteUser(@PathParam("id") String id) { return dataService.deleteUser(id); }
 }
