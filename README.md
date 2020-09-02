@@ -36,6 +36,10 @@ If you want to learn more about building native executables, please consult http
 
 ## Deploying to openshift 
 
+```
+export NAMESPACE=<your project name>
+```
+
 Deploy:
 ```
 ./scripts/deploy.sh deploy
