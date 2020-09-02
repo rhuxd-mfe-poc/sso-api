@@ -14,17 +14,17 @@ public class UserDataService {
     // For now just store users in memory.
     private static List<Contact> userList = new ArrayList<>();
 
-    public String addUser(Contact customer) {
+    public String addUser(Contact user) {
         String newId =  UUID.randomUUID().toString();
-        customer.setId(newId);
-        userList.add(customer);
+        user.setId(newId);
+        userList.add(user);
         return newId;
     }
 
     public String deleteUser(String id) {
-        for(Contact cust : userList) {
-            if(cust.getId().equals(id)) {
-                userList.remove(userList.indexOf(cust));
+        for(Contact user : userList) {
+            if(user.getId().equals(id)) {
+                userList.remove(userList.indexOf(user));
                 return "removed user: " + id;
             }
         }

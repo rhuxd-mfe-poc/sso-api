@@ -1,5 +1,6 @@
 package org.rh.uxd.sso;
 
+import javax.json.JsonObject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;

@@ -11,6 +11,11 @@ You can run your application in dev mode that enables live coding using:
 ./mvnw quarkus:dev
 ```
 
+Urls:
+
+    http://localhost:8080
+    http://localhost:8080/swagger-iu
+ 
 ## Packaging and running the application
 
 The application can be packaged using `./mvnw package`.
@@ -32,9 +37,11 @@ If you want to learn more about building native executables, please consult http
 ## Deploying to openshift 
 
 Deploy:
-
-    `./scripts/deploy.sh deploy`
+```
+./scripts/deploy.sh deploy
+```
     
 Undeploy:
-
-    `./scripts/deploy.sh undeploy`
+```
+./scripts/deploy.sh undeploy
+```
