@@ -22,6 +22,7 @@ deploy() {
   dd-oc new-app quay.io/quarkus/ubi-quarkus-native-s2i:19.3.1-java11~https://github.com/rhuxd-mfe-poc/sso-api.git --name=${DEPLOYMENT_NAME}
   oc expose svc/${DEPLOYMENT_NAME}
   dd-oc label deployment ${DEPLOYMENT_NAME} app.kubernetes.io/part-of=${APP_NAME} --overwrite=true
+  dd-oc label deployment ${DEPLOYMENT_NAME} app.openshift.io/runtime=java --overwrite=true
 }
 
 undeploy() {
