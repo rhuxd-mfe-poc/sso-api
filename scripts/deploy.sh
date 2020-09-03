@@ -9,7 +9,7 @@ usage() {
   exit 1
 }
 
-APP_NAME=${APP_NAME:-mfe-poc}
+APP_NAME=${APP_NAME:-sso-app}
 DEPLOYMENT_NAME=sso-api
 
 NAMESPACE=${NAMESPACE}
@@ -22,7 +22,7 @@ deploy() {
   dd-oc new-app quay.io/quarkus/ubi-quarkus-native-s2i:19.3.1-java11~https://github.com/rhuxd-mfe-poc/sso-api.git --name=${DEPLOYMENT_NAME}
   oc expose svc/${DEPLOYMENT_NAME}
   dd-oc label deployment ${DEPLOYMENT_NAME} app.kubernetes.io/part-of=${APP_NAME} --overwrite=true
-  dd-oc label deployment ${DEPLOYMENT_NAME} app.openshift.io/runtime=java --overwrite=true
+  dd-oc label deployment ${DEPLOYMENT_NAME} app.openshift.io/runtime=quarkus --overwrite=true
 }
 
 undeploy() {
